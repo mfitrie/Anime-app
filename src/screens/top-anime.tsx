@@ -5,7 +5,8 @@ import {
     Center, 
     HStack,
     Image,
-    ScrollView
+    ScrollView,
+    Pressable
 } from 'native-base';
 
 import useFetch from '../hooks/useFetch';
@@ -29,12 +30,16 @@ const TopAnime = () => {
             {chunkedData.map((row, rowIndex) => (
                 <HStack key={rowIndex} space={2} mb={2}>
                     {row.map((item: any, index: number) => (
-                        <Box key={index} w="1/2" h="64" bg="red.100">
+                        <Pressable w="1/2" h="64" bg="red.100" key={index} onPress={() => {
+                            console.log('im clicked')
+                        }}>
                             <Image w="full" h="full" src={item.images.jpg.image_url} alt='anime image' style={{ position: 'relative' }}/>
-                            <Text bg="orange.400" w="full" h="1/5" textAlign="center" style={{ position: 'absolute', display: 'flex', bottom: 0}}>
-                                {item.title_english}
-                            </Text>
-                        </Box>
+                            <Box bg="blueGray.900" opacity="80" w="full" h="1/5" style={{ position: 'absolute', display: 'flex', bottom: 0}}>
+                                <Text textAlign="center" opacity="100" color="white" fontWeight="semibold" style={{ zIndex: 5 }}>
+                                    {item.title_english}
+                                </Text>
+                            </Box>
+                        </Pressable>
                     ))}
                 </HStack>
             ))}
