@@ -8,9 +8,9 @@ const Drawer = createDrawerNavigator();
 
 const App = () => {
     return (
-        <Drawer.Navigator initialRouteName="Main" useLegacyImplementation={true}>
-            <Drawer.Screen name="Main" component={MainScreen} />
-            <Drawer.Screen name="TopAnime" component={TopAnimeScreen} />
+        <Drawer.Navigator initialRouteName="Main Screen" useLegacyImplementation={true}>
+            <Drawer.Screen name="Main Screen" component={MainScreen} />
+            <Drawer.Screen name="Top Anime" component={TopAnimeScreen} />
         </Drawer.Navigator>
     )
 }

@@ -1,11 +1,13 @@
 import React from 'react';
-import { NativeBaseProvider, Box, Text } from 'native-base';
+import { Center, Box, Text } from 'native-base';
 
 const MainScreen = () => {
     return (
-        <Box>
-            <Text>Main Screen</Text>
-        </Box>
+        <Center>
+            <Box>
+                <Text>Main Screen</Text>
+            </Box>
+        </Center>
     )
 }
 
