@@ -1,5 +1,6 @@
 import React from "react";
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import { useColorModeValue } from "native-base";
 
 import Sidebar from "./components/sidebar";
 import MainScreen from "./screens/main-screen";
@@ -11,10 +12,16 @@ const Drawer = createDrawerNavigator();
 
 const App = () => {
     return (
-        <Drawer.Navigator 
+        <Drawer.Navigator
             initialRouteName="Top Anime"
             drawerContent={props => <Sidebar {...props} />} 
             useLegacyImplementation={true}
+            screenOptions={{headerStyle: 
+                {
+                    backgroundColor: useColorModeValue('white', 'black'),
+                },
+                headerTintColor: useColorModeValue('black', 'white'),
+            }}
         >
             <Drawer.Screen name="Main Screen" component={MainScreen} />
             <Drawer.Screen name="Top Anime" component={TopAnimeScreen} />
