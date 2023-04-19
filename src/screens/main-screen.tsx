@@ -1,12 +1,17 @@
 import React from 'react';
 import { Center, Box, Text } from 'native-base';
+import LottieView from 'lottie-react-native';
+import assets from '../components/animation-loading';
+
 
 const MainScreen = () => {
     return (
-        <Center>
-            <Box>
-                <Text>Main Screen</Text>
-            </Box>
+        <Center alignItems={'center'} justifyItems={'center'} h="full">
+            <LottieView
+                autoPlay
+                loop
+                source={assets.lottieFiles.pochita}
+            />
         </Center>
     )
 }
